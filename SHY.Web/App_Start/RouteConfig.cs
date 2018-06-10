@@ -36,6 +36,7 @@ namespace SHY.Web
                   defaults: new { controller = "Product", action = "Search", id = UrlParameter.Optional },
                   namespaces: new string[] { "SHY.Web.Controllers" }
               );
+
             routes.MapRoute(
                  name: "Login",
                  url: "dang-nhap.html",
@@ -63,7 +64,7 @@ namespace SHY.Web
             routes.MapRoute(
                    name: "Page",
                    url: "trang/{alias}.html",
-                   defaults: new { controller = "Page", action = "Checkout", alias = UrlParameter.Optional },
+                   defaults: new { controller = "Page", action = "Index", alias = UrlParameter.Optional },
                    namespaces: new string[] { "SHY.Web.Controllers" }
                );
 

@@ -22,8 +22,12 @@
     <!--header-->
     @{Html.RenderAction("Header", "Home");}
     <!---->
-    <div class="banner-top">
-        <div class="container">
+    @*<div class="banner-top" >
+        <div class="container" style="    background: url(Assets/client/images/bgtop.jpg);
+    background-size: cover;
+    color: #ffffff;
+    background-position: center;
+    text-align: center;">
             <h1>Products</h1>
             <em></em>
             <h2>
@@ -31,7 +35,7 @@
                 <label>/</label>Products
             </h2>
         </div>
-    </div>
+    </div>*@
     <div class="content">
         <div class="container">
             @RenderBody()

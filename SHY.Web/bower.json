@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "angular": "~1.6.1",
-    "angular-ui-router": "~0.3.2",
+    "angular-ui-router": "~1.0.18",
     "bootbox": "~4.4.0",
     "bootstrap": "~3.3.6",
     "ckeditor": "~4.5.9",

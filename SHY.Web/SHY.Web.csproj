@@ -441,19 +441,16 @@
     <Content Include="Assets\admin\libs\angular-sanitize\angular-sanitize.js" />
     <Content Include="Assets\admin\libs\angular-sanitize\angular-sanitize.min.js" />
     <Content Include="Assets\admin\libs\angular-sanitize\index.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\karma.conf.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\common.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\resolve.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\state.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\stateDirectives.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\stateFilters.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\templateFactory.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\urlMatcherFactory.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\urlRouter.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\view.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\viewDirective.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\src\viewScroll.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.min.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.min.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\rollup.config.js" />
     <Content Include="Assets\admin\libs\angular-ui-select\dist\select.css" />
     <Content Include="Assets\admin\libs\angular-ui-select\dist\select.js" />
     <Content Include="Assets\admin\libs\angular-ui-select\dist\select.min.css" />
@@ -4968,6 +4965,7 @@
     <Content Include="Assets\client\images\bag.jpg" />
     <Content Include="Assets\client\images\bag1.jpg" />
     <Content Include="Assets\client\images\bank_logo.png" />
+    <Content Include="Assets\client\images\bgtop.jpg" />
     <Content Include="Assets\client\images\bo.jpg" />
     <Content Include="Assets\client\images\bott.jpg" />
     <Content Include="Assets\client\images\bottle.jpg" />
@@ -5008,6 +5006,9 @@
     <Content Include="Assets\client\images\si2.jpg" />
     <Content Include="Assets\client\images\si3.jpg" />
     <Content Include="Assets\client\images\si4.jpg" />
+    <Content Include="Assets\client\images\slide\slide01.png" />
+    <Content Include="Assets\client\images\slide\slide2.jpg" />
+    <Content Include="Assets\client\images\slide\slide3.jpg" />
     <Content Include="Assets\client\images\star.png" />
     <Content Include="Assets\client\images\tick1.png" />
     <Content Include="Assets\client\images\twitter.png" />
@@ -5123,6 +5124,27 @@
     <Content Include="Assets\client\themes\fonts\Oxygen-Regular.ttf" />
     <Content Include="Assets\client\themes\fonts\Ubuntu-Bold.ttf" />
     <Content Include="Assets\client\themes\fonts\Ubuntu-Regular.ttf" />
+    <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\artifacts.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\CHANGELOG.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\DOCS.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\downstream_projects.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\ISSUE_TEMPLATE.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\LICENSE" />
+    <Content Include="Assets\admin\libs\angular-ui-router\README.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\typedoc.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -5145,6 +5167,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Banner.cshtml" />
     <Content Include="Views\Shared\_ListLayouts.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
@@ -5160,7 +5183,6 @@
     <Folder Include="Assets\admin\libs\mustache\bin\" />
     <Folder Include="Reports\" />
     <Folder Include="UploadedFiles\" />
-    <Folder Include="Views\About\" />
     <Folder Include="Views\Post\" />
   </ItemGroup>
   <ItemGroup>
@@ -5587,12 +5609,6 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\CHANGELOG.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\CONTRIBUTING.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\LICENSE" />
-    <Content Include="Assets\admin\libs\angular-ui-router\README.md" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <Content Include="Views\ShoppingCart\CancelOrder.cshtml" />
     <Content Include="Views\ShoppingCart\ConfirmOrder.cshtml" />

@@ -21,12 +21,12 @@
         {
         <article style="position: absolute; width: 100%; opacity: 0;">
           <div class="banner-matter">
-            <div class="col-md-5 banner-bag">
-              <img class="img-responsive " src="@slide.Image" alt="@slide.Name" />
-            </div>
-            <div class="col-md-7 banner-off">
-              @Html.Raw(slide.Content)
-            </div>
+              <div class="col-md-12 banner-bag" style="background-image:url(@slide.Image); background-size: cover;     background-repeat: no-repeat; padding:0px; height:100%; background-position: center;">
+                  <div class="banner-off">
+                      @Html.Raw(slide.Content)
+                  </div>
+              </div>
+            
 
             <div class="clearfix"> </div>
           </div>
@@ -80,7 +80,6 @@
               <label for="rating-input-1-1" class="rating-star"> </label>
             </span>
           </div>
-          <a class="now-get get-cart btnAddToCart" href="#" data-id="@product.ID">Mua hàng</a>
           <div class="clearfix"> </div>
         </div>
       </div>
@@ -122,7 +121,6 @@
                     <label for="rating-input-1-1" class="rating-star"> </label>
                 </span>
             </div>
-            <a class="now-get get-cart btnAddToCart" href="#" data-id="@product.ID">Mua hàng</a>
             <div class="clearfix"> </div>
         </div>
       </div>

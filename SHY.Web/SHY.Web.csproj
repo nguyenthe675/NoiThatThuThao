@@ -4965,11 +4965,14 @@
     <Content Include="Assets\client\images\bag.jpg" />
     <Content Include="Assets\client\images\bag1.jpg" />
     <Content Include="Assets\client\images\bank_logo.png" />
+    <Content Include="Assets\client\images\bgflower.jpg" />
     <Content Include="Assets\client\images\bgtop.jpg" />
     <Content Include="Assets\client\images\bo.jpg" />
     <Content Include="Assets\client\images\bott.jpg" />
     <Content Include="Assets\client\images\bottle.jpg" />
     <Content Include="Assets\client\images\ch.jpg" />
+    <Content Include="Assets\client\images\co-nen-su-dung-noi-that-go-tu-nhien-cho-nha-moi-425-1.jpg" />
+    <Content Include="Assets\client\images\customer-support-online.jpg" />
     <Content Include="Assets\client\images\facebook.png" />
     <Content Include="Assets\client\images\gpluse.png" />
     <Content Include="Assets\client\images\img-sprite.png" />
@@ -4977,6 +4980,7 @@
     <Content Include="Assets\client\images\logo.png" />
     <Content Include="Assets\client\images\logo01.png" />
     <Content Include="Assets\client\images\logo_new.png" />
+    <Content Include="Assets\client\images\ong-hop-meo-hay-giup-do-noi-that-go-luon-dep-nhu-moi-427-1.jpg" />
     <Content Include="Assets\client\images\pi.jpg" />
     <Content Include="Assets\client\images\pi1.jpg" />
     <Content Include="Assets\client\images\pi2.jpg" />

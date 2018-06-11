@@ -8,7 +8,6 @@
                 var url = "/" + category.Alias + ".pc-" + category.ID + ".html";
                 var childCategories = Model.Where(x => x.ParentID == category.ID);
                 <li>
-
                     @if (childCategories.Count() > 0)
                     {
                         <a href="@url">
@@ -18,28 +17,24 @@
                     else
                     {
                         <a href="@url">
-                            @category.Name
+                            <i class="fa fa-angle-double-right"></i> @category.Name
                         </a>
                     }
 
-
                     @if (childCategories.Count() > 0)
-                {
+                    {
                         <ul class="cute">
                             @foreach (var childCategory in childCategories)
                             {
                                 var childUrl = "/" + childCategory.Alias + ".pc-" + childCategory.ID + ".html";
-                                <li class="subitem3"><a href="@childUrl">@childCategory.Name</a></li>
+                                <li class="subitem3"><a href="@childUrl"><i class="fa fa-angle-double-right"></i> @childCategory.Name</a></li>
                             }
-
                         </ul>
                     }
-
                 </li>
 
 
             }
-
         </ul>
     </div>
     <!--initiate accordion-->
@@ -62,13 +57,133 @@
 
           });
         </script>*@
-    <div class="chain-grid menu-chain">
-        <a href="single.html"><img class="img-responsive chain" src="/Assets/client/images/wat.jpg" alt="" /></a>
+
+    <div class="chain-grid menu-chain chain-cs">
+        <h3 class="cate"><i class="fa fa-list"></i> <span>TƯ VẤN BÁN HÀNG</span></h3>
+        <a href="single.html"><img class="img-responsive chain" src="/Assets/client/images/customer-support-online.jpg" alt="" /></a>
         <div class="grid-chain-bottom chain-watch">
-            <span class="actual dolor-left-grid">300$</span>
-            <span class="reducedfrom">500$</span>
-            <h6><a href="single.html">Lorem ipsum dolor</a></h6>
+            <h6>Hotline:</h6>
+            <span class="actual dolor-left-grid">0988.233.029</span>
         </div>
     </div>
-    <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a>
+    <div class="chain-grid menu-chain chain-cs">
+        <h3 class="cate"><i class="fa fa-list"></i> <span>Tìm theo giá bán</span></h3>
+        <ul class="menu">
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <i class="fa fa-angle-double-right"></i> 0 - 2.0000.000 Đ
+                </a>
+
+            </li>
+            <li>
+                <a href="/tu-go.pc-2.html">
+                    <i class="fa fa-angle-double-right"></i> 2.000.000 - 5.0000.000 Đ
+                </a>
+
+            </li>
+            <li>
+                <a href="/ke-go.pc-3.html">
+                    <i class="fa fa-angle-double-right"></i> 5.000.000 - 10.0000.000 Đ
+                </a>
+
+            </li>
+            <li>
+                <a href="/ban-phan.pc-4.html">
+                    <i class="fa fa-angle-double-right"></i> 10.000.000 - 20.0000.000 Đ
+                </a>
+
+            </li>
+            <li>
+                <a href="/ban-an.pc-5.html">
+                    <i class="fa fa-angle-double-right"></i> Trên 20.0000.000 Đ
+                </a>
+
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="chain-grid menu-chain chain-cs">
+        <h3 class="cate"><i class="fa fa-list"></i> <span> Sản phẩm bán chạy</span></h3>
+        <ul class="menu hot-product">
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
+                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
+                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
+                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
+                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
+                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
+                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="chain-grid menu-chain chain-cs">
+        <h3 class="cate"><i class="fa fa-list"></i> <span> Tin tức nổi bật</span></h3>
+        <ul class="menu hot-product">
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/ong-hop-meo-hay-giup-do-noi-that-go-luon-dep-nhu-moi-427-1.jpg" />
+                    <span>Tổng hợp mẹo hay giúp đồ nội thất gỗ luôn đẹp như mới</span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/co-nen-su-dung-noi-that-go-tu-nhien-cho-nha-moi-425-1.jpg" />
+                    <span>Có nên sử dụng nội thất gỗ tự nhiên cho nhà mới?</span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/ong-hop-meo-hay-giup-do-noi-that-go-luon-dep-nhu-moi-427-1.jpg" />
+                    <span>Tổng hợp mẹo hay giúp đồ nội thất gỗ luôn đẹp như mới</span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/co-nen-su-dung-noi-that-go-tu-nhien-cho-nha-moi-425-1.jpg" />
+                    <span>Có nên sử dụng nội thất gỗ tự nhiên cho nhà mới?</span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/ong-hop-meo-hay-giup-do-noi-that-go-luon-dep-nhu-moi-427-1.jpg" />
+                    <span>Tổng hợp mẹo hay giúp đồ nội thất gỗ luôn đẹp như mới</span>
+                </a>
+            </li>
+            <li>
+                <a href="/giuong.pc-1.html">
+                    <img src="~/Assets/client/images/co-nen-su-dung-noi-that-go-tu-nhien-cho-nha-moi-425-1.jpg" />
+                    <span>Có nên sử dụng nội thất gỗ tự nhiên cho nhà mới?</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -13,9 +13,11 @@ namespace SHY.Service
 
         void Update(Post post);
 
-        void Delete(int id);
+        Post Delete(int id);
 
         IEnumerable<Post> GetAll();
+
+        IEnumerable<Post> GetAll(string keyword);
 
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
 
@@ -24,8 +26,10 @@ namespace SHY.Service
         Post GetById(int id);
 
         IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetListPost(string keyword);
 
         void SaveChanges();
+        void Save();
     }
 
     public class PostService : IPostService
@@ -44,14 +48,28 @@ namespace SHY.Service
             _postRepository.Add(post);
         }
 
-        public void Delete(int id)
+
+        public Post Delete(int id)
         {
-            _postRepository.Delete(id);
+            return _postRepository.Delete(id);
         }
 
         public IEnumerable<Post> GetAll()
         {
             return _postRepository.GetAll(new string[] { "PostCategory" });
+        }
+
+        public void Save()
+        {
+            _unitOfWork.Commit();
+        }
+
+        public IEnumerable<Post> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+                return _postRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+            else
+                return _postRepository.GetAll();
         }
 
         public IEnumerable<Post> GetAllByCategoryPaging(int categoryId, int page, int pageSize, out int totalRow)
@@ -84,6 +102,16 @@ namespace SHY.Service
         public void Update(Post post)
         {
             _postRepository.Update(post);
+        }
+
+        public IEnumerable<Post> GetListPost(string keyword)
+        {
+            IEnumerable<Post> query;
+            if (!string.IsNullOrEmpty(keyword))
+                query = _postRepository.GetMulti(x => x.Name.Contains(keyword));
+            else
+                query = _postRepository.GetAll();
+            return query;
         }
     }
 }

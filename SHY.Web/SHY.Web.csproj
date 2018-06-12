@@ -243,6 +243,7 @@
     <Compile Include="Api\HomeController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
+    <Compile Include="Api\PostController.cs" />
     <Compile Include="Api\ProductController.cs" />
     <Compile Include="Api\StatisticController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -311,6 +312,13 @@
     <Content Include="app\components\application_roles\applicationRoleListController.js" />
     <Content Include="app\components\application_roles\applicationRoleListView.html" />
     <Content Include="app\components\application_roles\applicationRoles.module.js" />
+    <Content Include="app\components\app_users\applicationUserAddController.js" />
+    <Content Include="app\components\app_users\applicationUserAddView.html" />
+    <Content Include="app\components\app_users\applicationUserEditController.js" />
+    <Content Include="app\components\app_users\applicationUserEditView.html" />
+    <Content Include="app\components\app_users\applicationUserListController.js" />
+    <Content Include="app\components\app_users\applicationUserListView.html" />
+    <Content Include="app\components\app_users\applicationUsers.module.js" />
     <Content Include="app\components\application_users\applicationUserListController.js" />
     <Content Include="app\components\application_users\applicationUserListView.html" />
     <Content Include="app\components\application_users\applicationUserAddView.html" />
@@ -323,6 +331,15 @@
     <Content Include="app\components\home\rootController.js" />
     <Content Include="app\components\login\loginController.js" />
     <Content Include="app\components\login\loginView.html" />
+    <Content Include="app\components\post\postAddController.js" />
+    <Content Include="app\components\post\postAddView.html" />
+    <Content Include="app\components\post\postEditController.js" />
+    <Content Include="app\components\post\postEditView.html" />
+    <Content Include="app\components\post\postImportController.js" />
+    <Content Include="app\components\post\postImportView.html" />
+    <Content Include="app\components\post\postListController.js" />
+    <Content Include="app\components\post\postListView.html" />
+    <Content Include="app\components\post\post.module.js" />
     <Content Include="app\components\products\productImportController.js" />
     <Content Include="app\components\products\productImportView.html" />
     <Content Include="app\components\products\products.module.js" />
@@ -332,6 +349,13 @@
     <Content Include="app\components\products\productEditView.html" />
     <Content Include="app\components\products\productListController.js" />
     <Content Include="app\components\products\productListView.html" />
+    <Content Include="app\components\post_categories\postCategories.module.js" />
+    <Content Include="app\components\post_categories\postCategoryAddController.js" />
+    <Content Include="app\components\post_categories\postCategoryAddView.html" />
+    <Content Include="app\components\post_categories\postCategoryEditController.js" />
+    <Content Include="app\components\post_categories\postCategoryEditView.html" />
+    <Content Include="app\components\post_categories\postCategoryListController.js" />
+    <Content Include="app\components\post_categories\postCategoryListView.html" />
     <Content Include="app\components\product_categories\productCategories.module.js" />
     <Content Include="app\components\product_categories\productCategoryAddView.html" />
     <Content Include="app\components\product_categories\productCategoryAddController.js" />
@@ -441,16 +465,19 @@
     <Content Include="Assets\admin\libs\angular-sanitize\angular-sanitize.js" />
     <Content Include="Assets\admin\libs\angular-sanitize\angular-sanitize.min.js" />
     <Content Include="Assets\admin\libs\angular-sanitize\index.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\karma.conf.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.min.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.min.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\rollup.config.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\common.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\resolve.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\state.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\stateDirectives.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\stateFilters.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\templateFactory.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\urlMatcherFactory.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\urlRouter.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\view.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\viewDirective.js" />
+    <Content Include="Assets\admin\libs\angular-ui-router\src\viewScroll.js" />
     <Content Include="Assets\admin\libs\angular-ui-select\dist\select.css" />
     <Content Include="Assets\admin\libs\angular-ui-select\dist\select.js" />
     <Content Include="Assets\admin\libs\angular-ui-select\dist\select.min.css" />
@@ -5128,27 +5155,19 @@
     <Content Include="Assets\client\themes\fonts\Oxygen-Regular.ttf" />
     <Content Include="Assets\client\themes\fonts\Ubuntu-Bold.ttf" />
     <Content Include="Assets\client\themes\fonts\Ubuntu-Regular.ttf" />
+    <Content Include="Assets\admin\libs\angular\.bower.json" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
+    <Content Include="Assets\admin\libs\angular\bower.json" />
+    <Content Include="Assets\admin\libs\angular\LICENSE.md" />
+    <Content Include="Assets\admin\libs\angular\package.json" />
+    <Content Include="Assets\admin\libs\angular\README.md" />
     <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\artifacts.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\CHANGELOG.md" />
     <Content Include="Assets\admin\libs\angular-ui-router\CONTRIBUTING.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\DOCS.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\downstream_projects.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\ISSUE_TEMPLATE.md" />
     <Content Include="Assets\admin\libs\angular-ui-router\LICENSE" />
     <Content Include="Assets\admin\libs\angular-ui-router\README.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\typedoc.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -5216,14 +5235,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\admin\libs\angular\.bower.json" />
-    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
-    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
-    <Content Include="Assets\admin\libs\angular\bower.json" />
-    <Content Include="Assets\admin\libs\angular\package.json" />
-    <Content Include="Assets\admin\libs\angular\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\admin\libs\bootstrap\.bower.json" />
@@ -5639,7 +5650,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55429</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:8888/</IISUrl>
+          <IISUrl>http://localhost:8888</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

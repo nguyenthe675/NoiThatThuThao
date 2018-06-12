@@ -6,7 +6,7 @@
     "angular-ui-router": "~0.2.18",
     "bootbox": "~4.4.0",
     "bootstrap": "~3.3.6",
-    "ckeditor": "~4.5.9",
+    "ckeditor": "4.9.2",
     "fastclick": "~1.0.6",
     "jquery": "~2.2.3",
     "ngBootbox": "~0.1.3",

@@ -28,7 +28,7 @@
             apiService.put('api/post/update', $scope.post,
                 function (result) {
                     notificationService.displaySuccess(result.data.Name + ' đã được cập nhật.');
-                    $state.go('posts');
+                    $state.go('post');
                 }, function (error) {
                     notificationService.displayError('Cập nhật không thành công.');
                 });

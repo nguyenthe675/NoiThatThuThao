@@ -50,7 +50,7 @@
                 data: { categoryId: $scope.categoryId, files: $scope.files }
             }).then(function (result, status, headers, config) {
                 notificationService.displaySuccess(result.data);
-                $state.go('posts');
+                $state.go('post');
             },
             function (data, status, headers, config) {
                 notificationService.displayError(data);

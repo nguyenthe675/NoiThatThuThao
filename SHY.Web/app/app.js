@@ -3,12 +3,14 @@
 (function () {
     angular.module('shyApp',
         ['shyApp.products',
-         'shyApp.application_groups',
-         'shyApp.product_categories',
-         'shyApp.application_roles',
-         'shyApp.application_users',
-           'shyApp.statistics',
-         'shyApp.common'])
+            'shyApp.application_groups',
+            'shyApp.product_categories',
+            'shyApp.post_categories',
+            'shyApp.posts',
+            'shyApp.application_roles',
+            'shyApp.application_users',
+            'shyApp.statistics',
+            'shyApp.common'])
         .config(config)
         .config(configAuthentication);
 

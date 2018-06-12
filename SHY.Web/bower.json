@@ -2,8 +2,8 @@
   "name": "ASP.NET",
   "private": true,
   "dependencies": {
-    "angular": "~1.6.1",
-    "angular-ui-router": "~1.0.18",
+    "angular": "~1.5.5",
+    "angular-ui-router": "~0.2.18",
     "bootbox": "~4.4.0",
     "bootstrap": "~3.3.6",
     "ckeditor": "~4.5.9",

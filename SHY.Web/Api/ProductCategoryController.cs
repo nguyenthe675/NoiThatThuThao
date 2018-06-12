@@ -62,6 +62,7 @@ namespace SHY.Web.Api
 
         [Route("getall")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>

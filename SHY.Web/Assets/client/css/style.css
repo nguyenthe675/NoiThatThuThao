@@ -72,7 +72,7 @@ ul.support {
 /*----*/
 .bottom-header {
     border-bottom: 1px solid #ddd;
-    padding: 0.7em 0 1em;
+    padding: 0.7em 0 0;
 }
 
 .header-bottom-left {
@@ -1457,19 +1457,18 @@ select.in-drop {
 }
 
 .hot-product li {
-    
-    height:80px;
+    height: 92px;
 }
 
     .hot-product li a img {
-        width: 35%;
+        width: 30%;
         margin: 2%;
-        
+        height: 80px;
         float: left;
     }
 
     .hot-product li a span {
-        width: 60%;
+        width: 65%;
         font-size: 12px;
         color: black;
         float: right;
@@ -2129,3 +2128,20 @@ select.in-drop {
 }
 
 
+/*Stype post*/
+
+.grid-post .item-post {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+}
+
+    .grid-post .item-post .grid-post-img {
+        padding:5px;
+        border: 1px solid #ccc;
+    }
+
+    .grid-post .item-post .content_box .post-title {
+        font-weight: bold;
+        font-size: 16px;
+    }

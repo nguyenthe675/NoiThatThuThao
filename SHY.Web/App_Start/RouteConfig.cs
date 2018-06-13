@@ -36,7 +36,18 @@ namespace SHY.Web
                   defaults: new { controller = "Product", action = "Search", id = UrlParameter.Optional },
                   namespaces: new string[] { "SHY.Web.Controllers" }
               );
-
+            routes.MapRoute(
+                  name: "PostSearch",
+                  url: "tin-tuc.html",
+                  defaults: new { controller = "Post", action = "Search", id = UrlParameter.Optional },
+                  namespaces: new string[] { "SHY.Web.Controllers" }
+              );
+            routes.MapRoute(
+                  name: "Products",
+                  url: "products.html",
+                  defaults: new { controller = "Product", action = "ProductsByPrice", id = UrlParameter.Optional },
+                  namespaces: new string[] { "SHY.Web.Controllers" }
+              );
             routes.MapRoute(
                  name: "Login",
                  url: "dang-nhap.html",

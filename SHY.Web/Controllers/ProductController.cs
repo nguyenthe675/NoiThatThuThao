@@ -79,6 +79,29 @@ namespace SHY.Web.Controllers
 
             return View(paginationSet);
         }
+
+        public ActionResult ProductsByPrice(int startPrice,int endPrice, int page = 1, string sort = "")
+        {
+            int pageSize = int.Parse(ConfigHelper.GetByKey("PageSize"));
+            int totalRow = 0;
+            var productModel = _productService.ProductByPrice(startPrice,endPrice, page, pageSize, sort, out totalRow);
+            var productViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productModel);
+            int totalPage = (int)Math.Ceiling((double)totalRow / pageSize);
+
+            ViewBag.StartPrice = startPrice;
+            ViewBag.EndPrice = endPrice;
+            var paginationSet = new PaginationSet<ProductViewModel>()
+            {
+                Items = productViewModel,
+                MaxPage = int.Parse(ConfigHelper.GetByKey("MaxPage")),
+                Page = page,
+                TotalCount = totalRow,
+                TotalPages = totalPage
+            };
+
+            return View(paginationSet);
+        }
+
         public ActionResult ListByTag(string tagId, int page = 1)
         {
             int pageSize = int.Parse(ConfigHelper.GetByKey("PageSize"));

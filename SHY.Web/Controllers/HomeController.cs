@@ -15,15 +15,18 @@ namespace SHY.Web.Controllers
     {
         IProductCategoryService _productCategoryService;
         IProductService _productService;
+        IPostService _postService;
         ICommonService _commonService;
 
         public HomeController(IProductCategoryService productCategoryService,
             IProductService productService,
+            IPostService postService,
             ICommonService commonService)
         {
             _productCategoryService = productCategoryService;
             _commonService = commonService;
             _productService = productService;
+            _postService = postService;
         }
 
         [OutputCache(Duration = 60, Location = System.Web.UI.OutputCacheLocation.Client)]
@@ -72,12 +75,32 @@ namespace SHY.Web.Controllers
         }
 
         [ChildActionOnly]
-        //[OutputCache(Duration = 3600)]
         public ActionResult Category()
         {
             var model = _productCategoryService.GetAll();
             var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
             return PartialView(listProductCategoryViewModel);
         }
+
+        [ChildActionOnly]
+        public ActionResult HotProducts()
+        {
+            var topSaleProductModel = _productService.GetHotProduct(6);
+
+            var topSaleProductViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(topSaleProductModel);
+
+            return PartialView(topSaleProductViewModel);
+        }
+
+        [ChildActionOnly]
+        public ActionResult NewPosts()
+        {
+            var topNewPostModel = _postService.GetNewPost(6);
+
+            var topNewPostViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(topNewPostModel);
+
+            return PartialView(topNewPostViewModel);
+        }
+
     }
 }

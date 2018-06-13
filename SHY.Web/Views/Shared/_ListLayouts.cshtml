@@ -1,45 +1,49 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>@ViewBag.Title</title>
-  <meta name="description" content="@ViewBag.MetaKeyword">
-  <meta name="keywords" content="@ViewBag.MetaDescription">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.MetaKeyword">
+    <meta name="keywords" content="@ViewBag.MetaDescription">
 
-  @Styles.Render("~/css/base")
-  <!--//theme-style-->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-  <!--fonts-->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <!--//fonts-->
-  <style>
-    .ui-autocomplete {
-      z-index: 1000;
-    }
-  </style>
+    @Styles.Render("~/css/base")
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <style>
+        .ui-autocomplete {
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
     <!--header-->
     @{Html.RenderAction("Header", "Home");}
     <!---->
     @*<div class="banner-top" >
-        <div class="container" style="    background: url(Assets/client/images/bgtop.jpg);
-    background-size: cover;
-    color: #ffffff;
-    background-position: center;
-    text-align: center;">
-            <h1>Products</h1>
-            <em></em>
-            <h2>
-                <a href="index.html">Home</a>
-                <label>/</label>Products
-            </h2>
-        </div>
-    </div>*@
+            <div class="container" style="    background: url(Assets/client/images/bgtop.jpg);
+        background-size: cover;
+        color: #ffffff;
+        background-position: center;
+        text-align: center;">
+                <h1>Products</h1>
+                <em></em>
+                <h2>
+                    <a href="index.html">Home</a>
+                    <label>/</label>Products
+                </h2>
+            </div>
+        </div>*@
     <div class="content">
         <div class="container">
             @RenderBody()
-            @{Html.RenderAction("Category", "Home");}
+            <div class="sub-cate">
+                @{Html.RenderAction("Category", "Home");}
+                @{Html.RenderAction("HotProducts", "Home");}
+                @{Html.RenderAction("NewPosts", "Home");}
+            </div>
         </div>
     </div>
     @{ Html.RenderAction("Footer", "Home");}

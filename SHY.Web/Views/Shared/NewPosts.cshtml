@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SHY.Web.Models.PostViewModel>
+
+<div class="chain-grid menu-chain chain-cs">
+    <h3 class="cate"><i class="fa fa-list"></i> <span> Tin tức nổi bật</span></h3>
+    <ul class="menu hot-product">
+        @foreach (var product in Model)
+        {
+            var url = "/" + product.Alias + ".p-" + product.ID + ".html";
+            <li>
+                <a href="@url">
+                    <img src="@product.Image" width="50" />
+                    <span>@product.Name </span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+

@@ -27,6 +27,8 @@ namespace SHY.Service
 
         IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
         IEnumerable<Post> GetListPost(string keyword);
+        IEnumerable<Post> Search(string keyword, int page, int pageSize, string sort, out int totalRow);
+        IEnumerable<Post> GetNewPost(int top);
 
         void SaveChanges();
         void Save();
@@ -57,6 +59,31 @@ namespace SHY.Service
         public IEnumerable<Post> GetAll()
         {
             return _postRepository.GetAll(new string[] { "PostCategory" });
+        }
+
+        public IEnumerable<Post> GetNewPost(int top)
+        {
+            return _postRepository.GetMulti(x => x.Status && x.HotFlag == true).OrderByDescending(x => x.CreatedDate).Take(top);
+
+        }
+
+        public IEnumerable<Post> Search(string keyword, int page, int pageSize, string sort, out int totalRow)
+        {
+            var query = !String.IsNullOrEmpty(keyword) ? _postRepository.GetMulti(x => x.Status && x.Name.Contains(keyword)) : _postRepository.GetMulti(x => x.Status);
+
+            switch (sort)
+            {
+                case "popular":
+                    query = query.OrderByDescending(x => x.ViewCount);
+                    break;
+                default:
+                    query = query.OrderByDescending(x => x.CreatedDate);
+                    break;
+            }
+
+            totalRow = query.Count();
+
+            return query.Skip((page - 1) * pageSize).Take(pageSize);
         }
 
         public void Save()

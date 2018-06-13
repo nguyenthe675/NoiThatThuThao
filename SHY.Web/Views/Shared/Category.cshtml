@@ -1,189 +1,85 @@
 ﻿@model IEnumerable<SHY.Web.Models.ProductCategoryViewModel>
-<div class="sub-cate">
-    <div class="top-nav rsidebar span_1_of_left">
-        <h3 class="cate"><i class="fa fa-list"></i> Danh mục sản phẩm</h3>
-        <ul class="menu">
-            @foreach (var category in Model.Where(x => x.ParentID == null))
-            {
-                var url = "/" + category.Alias + ".pc-" + category.ID + ".html";
-                var childCategories = Model.Where(x => x.ParentID == category.ID);
-                <li>
-                    @if (childCategories.Count() > 0)
-                    {
-                        <a href="@url">
-                            @category.Name<img class="arrow-img" src="/Assets/client/images/arrow1.png" alt="" />
-                        </a>
-                    }
-                    else
-                    {
-                        <a href="@url">
-                            <i class="fa fa-angle-double-right"></i> @category.Name
-                        </a>
-                    }
-
-                    @if (childCategories.Count() > 0)
-                    {
-                        <ul class="cute">
-                            @foreach (var childCategory in childCategories)
-                            {
-                                var childUrl = "/" + childCategory.Alias + ".pc-" + childCategory.ID + ".html";
-                                <li class="subitem3"><a href="@childUrl"><i class="fa fa-angle-double-right"></i> @childCategory.Name</a></li>
-                            }
-                        </ul>
-                    }
-                </li>
-
-
-            }
-        </ul>
-    </div>
-    <!--initiate accordion-->
-    @*<script type="text/javascript">
-          $(function () {
-            var menu_ul = $('.menu > li > ul'),
-                   menu_a = $('.menu > li > a');
-            menu_ul.hide();
-            menu_a.click(function (e) {
-              e.preventDefault();
-              if (!$(this).hasClass('active')) {
-                menu_a.removeClass('active');
-                menu_ul.filter(':visible').slideUp('normal');
-                $(this).addClass('active').next().stop(true, true).slideDown('normal');
-              } else {
-                $(this).removeClass('active');
-                $(this).next().stop(true, true).slideUp('normal');
-              }
-            });
-
-          });
-        </script>*@
-
-    <div class="chain-grid menu-chain chain-cs">
-        <h3 class="cate"><i class="fa fa-list"></i> <span>TƯ VẤN BÁN HÀNG</span></h3>
-        <a href="single.html"><img class="img-responsive chain" src="/Assets/client/images/customer-support-online.jpg" alt="" /></a>
-        <div class="grid-chain-bottom chain-watch">
-            <h6>Hotline:</h6>
-            <span class="actual dolor-left-grid">0988.233.029</span>
-        </div>
-    </div>
-    <div class="chain-grid menu-chain chain-cs">
-        <h3 class="cate"><i class="fa fa-list"></i> <span>Tìm theo giá bán</span></h3>
-        <ul class="menu">
+<div class="top-nav rsidebar span_1_of_left">
+    <h3 class="cate"><i class="fa fa-list"></i> Danh mục sản phẩm</h3>
+    <ul class="menu">
+        @foreach (var category in Model.Where(x => x.ParentID == null))
+        {
+            var url = "/" + category.Alias + ".pc-" + category.ID + ".html";
+            var childCategories = Model.Where(x => x.ParentID == category.ID);
             <li>
-                <a href="/giuong.pc-1.html">
-                    <i class="fa fa-angle-double-right"></i> 0 - 2.0000.000 Đ
-                </a>
+                @if (childCategories.Count() > 0)
+                {
+                    <a href="@url">
+                        @category.Name<img class="arrow-img" src="/Assets/client/images/arrow1.png" alt="" />
+                    </a>
+                }
+                else
+                {
+                    <a href="@url">
+                        <i class="fa fa-angle-double-right"></i> @category.Name
+                    </a>
+                }
 
-            </li>
-            <li>
-                <a href="/tu-go.pc-2.html">
-                    <i class="fa fa-angle-double-right"></i> 2.000.000 - 5.0000.000 Đ
-                </a>
-
-            </li>
-            <li>
-                <a href="/ke-go.pc-3.html">
-                    <i class="fa fa-angle-double-right"></i> 5.000.000 - 10.0000.000 Đ
-                </a>
-
-            </li>
-            <li>
-                <a href="/ban-phan.pc-4.html">
-                    <i class="fa fa-angle-double-right"></i> 10.000.000 - 20.0000.000 Đ
-                </a>
-
-            </li>
-            <li>
-                <a href="/ban-an.pc-5.html">
-                    <i class="fa fa-angle-double-right"></i> Trên 20.0000.000 Đ
-                </a>
-
+                @if (childCategories.Count() > 0)
+                {
+                    <ul class="cute">
+                        @foreach (var childCategory in childCategories)
+                        {
+                            var childUrl = "/" + childCategory.Alias + ".pc-" + childCategory.ID + ".html";
+                            <li class="subitem3"><a href="@childUrl"><i class="fa fa-angle-double-right"></i> @childCategory.Name</a></li>
+                        }
+                    </ul>
+                }
             </li>
 
-        </ul>
-    </div>
 
-    <div class="chain-grid menu-chain chain-cs">
-        <h3 class="cate"><i class="fa fa-list"></i> <span> Sản phẩm bán chạy</span></h3>
-        <ul class="menu hot-product">
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
-                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
-                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
-                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
-                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
-                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/slide/slide2.jpg" width="50" />
-                    <span>Giường ngủ gỗ Pơ-nu dát phản <br /> <b style="color:red">9.800.000 đ</b></span>
-                </a>
-            </li>
-        </ul>
-    </div>
+        }
+    </ul>
+</div>
 
-    <div class="chain-grid menu-chain chain-cs">
-        <h3 class="cate"><i class="fa fa-list"></i> <span> Tin tức nổi bật</span></h3>
-        <ul class="menu hot-product">
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/ong-hop-meo-hay-giup-do-noi-that-go-luon-dep-nhu-moi-427-1.jpg" />
-                    <span>Tổng hợp mẹo hay giúp đồ nội thất gỗ luôn đẹp như mới</span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/co-nen-su-dung-noi-that-go-tu-nhien-cho-nha-moi-425-1.jpg" />
-                    <span>Có nên sử dụng nội thất gỗ tự nhiên cho nhà mới?</span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/ong-hop-meo-hay-giup-do-noi-that-go-luon-dep-nhu-moi-427-1.jpg" />
-                    <span>Tổng hợp mẹo hay giúp đồ nội thất gỗ luôn đẹp như mới</span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/co-nen-su-dung-noi-that-go-tu-nhien-cho-nha-moi-425-1.jpg" />
-                    <span>Có nên sử dụng nội thất gỗ tự nhiên cho nhà mới?</span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/ong-hop-meo-hay-giup-do-noi-that-go-luon-dep-nhu-moi-427-1.jpg" />
-                    <span>Tổng hợp mẹo hay giúp đồ nội thất gỗ luôn đẹp như mới</span>
-                </a>
-            </li>
-            <li>
-                <a href="/giuong.pc-1.html">
-                    <img src="~/Assets/client/images/co-nen-su-dung-noi-that-go-tu-nhien-cho-nha-moi-425-1.jpg" />
-                    <span>Có nên sử dụng nội thất gỗ tự nhiên cho nhà mới?</span>
-                </a>
-            </li>
-        </ul>
+
+<div class="chain-grid menu-chain chain-cs">
+    <h3 class="cate"><i class="fa fa-list"></i> <span>TƯ VẤN BÁN HÀNG</span></h3>
+    <a href="single.html"><img class="img-responsive chain" src="/Assets/client/images/customer-support-online.jpg" alt="" /></a>
+    <div class="grid-chain-bottom chain-watch">
+        <h6>Hotline:</h6>
+        <span class="actual dolor-left-grid">0166.3606.351</span>
     </div>
 </div>
+<div class="chain-grid menu-chain chain-cs">
+    <h3 class="cate"><i class="fa fa-list"></i> <span>Tìm theo giá bán</span></h3>
+    <ul class="menu">
+        <li>
+            <a href="/products.html?startPrice=0&endPrice=2000000">
+                <i class="fa fa-angle-double-right"></i> 0 - 2.0000.000 Đ
+            </a>
+
+        </li>
+        <li>
+            <a href="/products.html?startPrice=2000000&endPrice=5000000">
+                <i class="fa fa-angle-double-right"></i> 2.000.000 - 5.0000.000 Đ
+            </a>
+
+        </li>
+        <li>
+            <a href="/products.html?startPrice=5000000&endPrice=10000000">
+                <i class="fa fa-angle-double-right"></i> 5.000.000 - 10.0000.000 Đ
+            </a>
+
+        </li>
+        <li>
+            <a href="/products.html?startPrice=10000000&endPrice=20000000">
+                <i class="fa fa-angle-double-right"></i> 10.000.000 - 20.0000.000 Đ
+            </a>
+
+        </li>
+        <li>
+            <a href="/products.html?startPrice=20000000&endPrice=9999999999999">
+                <i class="fa fa-angle-double-right"></i> Trên 20.0000.000 Đ
+            </a>
+
+        </li>
+
+    </ul>
+</div>
+

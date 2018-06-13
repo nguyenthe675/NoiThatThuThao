@@ -5183,6 +5183,14 @@
     <Content Include="Assets\client\images\slide\slide2.jpg" />
     <Content Include="Assets\client\images\slide\slide3.jpg" />
     <Content Include="Assets\client\images\star.png" />
+    <Content Include="Assets\client\images\thumbs\123pay.png" />
+    <Content Include="Assets\client\images\thumbs\chuyenphat.png" />
+    <Content Include="Assets\client\images\thumbs\jcb.png" />
+    <Content Include="Assets\client\images\thumbs\kerry.png" />
+    <Content Include="Assets\client\images\thumbs\mastercard.png" />
+    <Content Include="Assets\client\images\thumbs\shipchung.png" />
+    <Content Include="Assets\client\images\thumbs\viettelpost.png" />
+    <Content Include="Assets\client\images\thumbs\visa.png" />
     <Content Include="Assets\client\images\tick1.png" />
     <Content Include="Assets\client\images\twitter.png" />
     <Content Include="Assets\client\images\wa.jpg" />
@@ -5360,6 +5368,10 @@
     <Content Include="Views\Shared\_Banner.cshtml" />
     <Content Include="Views\Shared\_ListLayouts.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Product\ProductsByPrice.cshtml" />
+    <Content Include="Views\Shared\HotProducts.cshtml" />
+    <Content Include="Views\Shared\NewPosts.cshtml" />
+    <Content Include="Views\Post\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
@@ -5375,7 +5387,6 @@
     <Folder Include="Assets\admin\libs\mustache\bin\" />
     <Folder Include="Reports\" />
     <Folder Include="UploadedFiles\" />
-    <Folder Include="Views\Post\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

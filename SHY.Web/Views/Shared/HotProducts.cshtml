@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SHY.Web.Models.ProductViewModel>
+
+<div class="chain-grid menu-chain chain-cs">
+    <h3 class="cate"><i class="fa fa-list"></i> <span> Sản phẩm bán chạy</span></h3>
+    <ul class="menu hot-product">
+        @foreach (var product in Model)
+        {
+            var url = "/" + product.Alias + ".p-" + product.ID + ".html";
+            <li>
+                <a href="@url">
+                    <img src="@product.Image" width="50" />
+                    <span>@product.Name <br /> <b style="color:red">@product.Price.ToString("N0")</b></span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+

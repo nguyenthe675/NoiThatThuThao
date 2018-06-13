@@ -1,40 +1,60 @@
 ﻿@model SHY.Web.Models.FooterViewModel
 <div class="footer">
     @*<div class="footer-top">
-        <div class="container">
-            <div class="latter">
-                <h6>Đăng ký nhận thư</h6>
-                <div class="sub-left-right">
-                    <form>
-                        <input type="text" placeholder="Nhập email tại đây" />
-                        <input type="submit" value="Gửi" />
-                    </form>
+            <div class="container">
+                <div class="latter">
+                    <h6>Đăng ký nhận thư</h6>
+                    <div class="sub-left-right">
+                        <form>
+                            <input type="text" placeholder="Nhập email tại đây" />
+                            <input type="submit" value="Gửi" />
+                        </form>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="latter-right">
+                    <p>Theo dõi:</p>
+                    <ul class="face-in-to">
+                        <li><a href="#"><span> </span></a></li>
+                        <li><a href="#"><span class="facebook-in"> </span></a></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                    <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
-            <div class="latter-right">
-                <p>Theo dõi:</p>
-                <ul class="face-in-to">
-                    <li><a href="#"><span> </span></a></li>
-                    <li><a href="#"><span class="facebook-in"> </span></a></li>
-                    <div class="clearfix"> </div>
-                </ul>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>*@
+        </div>*@
     <div class="footer-bottom">
         <div class="container">
-            @Html.Raw(Model.Content)
-            @*<h4>ĐỒ GỖ NỘI THẤT THU THẢO</h4>
-            <p>Địa chỉ: 631/1 Lê Đức Thọ, Phường 16, Quận Gò Vấp, TP.HCM</p>
-            <p>Điện thoại: 0166.3606.351 - 0988.233.029</p>
-            <p>
-                Chuyên bán sỉ và lẻ
-                Gỗ Sồi - Xoan Đào
-                Giường - tủ - kệ - bàn ghế - bàn phấn....
-            </p>*@
+            <div class="col-md-6">
+                @Html.Raw(Model.Content)
+            </div>
+            <div class="col-md-3">
+                <p>
+                    Thanh toán an toàn
+                </p>
+                <p>
+                    <img src="~/Assets/client/images/thumbs/123pay.png" style="    background: #fff;" />
+                    <img src="~/Assets/client/images/thumbs/jcb.png" style="    background: #fff;"/>
+                </p>
+                <p>
+                    <img src="~/Assets/client/images/thumbs/visa.png" style="    background: #fff;"/>
+                    <img src="~/Assets/client/images/thumbs/mastercard.png" style="    background: #fff;" />
+                </p>
+            </div>
+            <div class="col-md-3">
+                <p>
+                    Đối tác vận chuyển
+                </p>
+                <p>
+                    <img src="~/Assets/client/images/thumbs/kerry.png" style="    background: #fff;"/>
+                    <img src="~/Assets/client/images/thumbs/viettelpost.png" style="    background: #fff;" />
+                </p>
+                <p>
+                    <img src="~/Assets/client/images/thumbs/shipchung.png" style="    background: #fff;"/>
+                    <img src="~/Assets/client/images/thumbs/chuyenphat.png" style="    background: #fff;"/>
+                </p>
+            </div>
         </div>
     </div>
 </div>

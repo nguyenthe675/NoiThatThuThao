@@ -5372,6 +5372,7 @@
     <Content Include="Views\Shared\HotProducts.cshtml" />
     <Content Include="Views\Shared\NewPosts.cshtml" />
     <Content Include="Views\Post\Search.cshtml" />
+    <Content Include="Views\Post\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />

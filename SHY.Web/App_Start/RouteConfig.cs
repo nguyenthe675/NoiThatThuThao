@@ -93,6 +93,12 @@ namespace SHY.Web
                    namespaces: new string[] { "SHY.Web.Controllers" }
              );
             routes.MapRoute(
+                 name: "Post",
+                 url: "{alias}.t-{postId}.html",
+                 defaults: new { controller = "Post", action = "Detail", postId = UrlParameter.Optional },
+                   namespaces: new string[] { "SHY.Web.Controllers" }
+             );
+            routes.MapRoute(
                  name: "TagList",
                  url: "tag/{tagId}.html",
                  defaults: new { controller = "Product", action = "ListByTag", tagId = UrlParameter.Optional },

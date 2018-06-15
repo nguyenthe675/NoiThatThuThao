@@ -26,7 +26,7 @@
         <div class="grid-post">
             @foreach (var product in Model.Items)
             {
-                var url = "/" + product.Alias + ".p-" + product.ID + ".html";
+                var url = "/" + product.Alias + ".t-" + product.ID + ".html";
                 <div class="item-post row">
                     <div class="col-md-2 grid-post-img">
                         <a href="@url">

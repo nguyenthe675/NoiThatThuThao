@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace SHY.Web.Controllers
 {
@@ -46,6 +47,13 @@ namespace SHY.Web.Controllers
             };
 
             return View(paginationSet);
+        }
+
+        public ActionResult Detail(int postId)
+        {
+            var postModel = _postService.GetById(postId);
+            var viewModel = Mapper.Map<Post, PostViewModel>(postModel);
+            return View(viewModel);
         }
 
     }

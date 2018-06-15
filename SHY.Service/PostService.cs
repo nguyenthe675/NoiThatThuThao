@@ -63,7 +63,7 @@ namespace SHY.Service
 
         public IEnumerable<Post> GetNewPost(int top)
         {
-            return _postRepository.GetMulti(x => x.Status && x.HotFlag == true).OrderByDescending(x => x.CreatedDate).Take(top);
+            return _postRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(top);
 
         }
 

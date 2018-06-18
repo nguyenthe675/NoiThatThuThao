@@ -44,7 +44,7 @@ namespace SHY.Service
         Tag GetTag(string tagId);
 
         void IncreaseView(int id);
-
+        IEnumerable<Product> GetProductByCategory(int top, int CategoryId);
         IEnumerable<Product> GetListProductByTag(string tagId, int page, int pagesize, out int totalRow);
 
         bool SellProduct(int productId, int quantity);
@@ -159,6 +159,12 @@ namespace SHY.Service
         {
             return _productRepository.GetMulti(x => x.Status && x.HotFlag == true).OrderByDescending(x => x.CreatedDate).Take(top);
 
+        }
+
+
+        public IEnumerable<Product> GetProductByCategory(int top, int CategoryId)
+        {
+            return _productRepository.GetMulti(x => x.Status && x.CategoryID == CategoryId).OrderByDescending(x => x.CreatedDate).Take(top);
         }
 
         public IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, string sort, out int totalRow)

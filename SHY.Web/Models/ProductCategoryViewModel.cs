@@ -34,6 +34,7 @@ namespace SHY.Web.Models
 
         public DateTime? UpdatedDate { set; get; }
 
+        public IEnumerable<ProductViewModel> Products {set;get; }
 
         public string UpdatedBy { set; get; }
 

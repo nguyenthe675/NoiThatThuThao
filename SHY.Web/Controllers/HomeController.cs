@@ -44,6 +44,15 @@ namespace SHY.Web.Controllers
             homeViewModel.LastestProducts = lastestProductViewModel;
             homeViewModel.TopSaleProducts = topSaleProductViewModel;
 
+            var listCategory = _productCategoryService.GetAll();
+            var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(listCategory);
+            foreach (var item in listProductCategoryViewModel)
+            {
+                var topCateProductModel = _productService.GetProductByCategory(6, item.ID);
+
+                item.Products = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(topCateProductModel);
+            }
+            homeViewModel.ProductCategories = listProductCategoryViewModel;
             try
             {
                 homeViewModel.Title = _commonService.GetSystemConfig(CommonConstants.HomeTitle).ValueString;
@@ -90,6 +99,22 @@ namespace SHY.Web.Controllers
             var topSaleProductViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(topSaleProductModel);
 
             return PartialView(topSaleProductViewModel);
+        }
+
+        [ChildActionOnly]
+        public ActionResult GetAllProductsByCategory()
+        {
+            var listCategory = _productCategoryService.GetAll();
+            var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(listCategory);
+            foreach(var item in listProductCategoryViewModel)
+            {
+                var topSaleProductModel = _productService.GetProductByCategory(6,item.ID);
+
+                var topSaleProductViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(topSaleProductModel);
+                item.Products = topSaleProductViewModel.ToList();
+            }
+
+            return PartialView(listProductCategoryViewModel);
         }
 
         [ChildActionOnly]

@@ -62,6 +62,10 @@ ul.support {
     font-size: 20px;
 }
 
+    .top-header-right a {
+        color: white;
+    }
+
 .down-top {
     float: left;
 }
@@ -523,7 +527,6 @@ h5.latest-product {
     color: #000;
     font-weight: 700;
     padding: 0.8em 0.5em 0;
-    
 }
 
     .grid-chain-bottom h6 a:hover {
@@ -599,14 +602,14 @@ span.dolor-left-grid {
     font-size: 1.3em;
 }
 
-.chain-cs .cate i {
-    position: absolute;
-    left: 0px;
-    height: 100%;
-    top: 0px;
-    padding: 10px;
-    background: #ab4a05;
-}
+    .chain-cs .cate i {
+        position: absolute;
+        left: 0px;
+        height: 100%;
+        top: 0px;
+        padding: 10px;
+        background: #ab4a05;
+    }
 
     .chain-cs .cate span {
         color: #ab4a05;
@@ -1207,6 +1210,7 @@ a.forgot {
 .footer {
     margin-top: 20px;
 }
+
 .footer-top {
     background: #F5F5F5;
     margin: 3em 0 0;
@@ -2137,7 +2141,7 @@ select.in-drop {
 }
 
     .grid-post .item-post .grid-post-img {
-        padding:5px;
+        padding: 5px;
         border: 1px solid #ccc;
     }
 
